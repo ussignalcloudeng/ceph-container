@@ -1,0 +1,12 @@
+# add the necessary repos
+    echo "deb http://cdn.softiron.com/distro/packages __OS_CODENAME__-softiron-ceph-${CEPH_VERSION}-v14.2.22-si2 main" \
+      > /etc/apt/sources.list.d/ceph.list && \
+    echo "deb http://cdn.softiron.com/distro/packages/ __OS_CODENAME__-softiron main" \
+      > /etc/apt/sources.list.d/softiron.list && \
+    echo "deb [check-valid-until=no] http://cdn.softiron.com/debian-mirror/__OS_CODENAME__/debian-security __OS_CODENAME__/updates main" \
+      > /etc/apt/sources.list.d/softiron-updates.list && \
+    echo "deb [check-valid-until=no] http://cdn.softiron.com/debian-mirror/__OS_CODENAME__/debian __OS_CODENAME__-updates main" \
+      >> /etc/apt/sources.list.d/softiron-updates.list && \
+    DEBIAN_FRONTEND=noninteractive apt-get update && \
+    DEBIAN_FRONTEND=noninteractive apt-get install -yy --force-yes --no-install-recommends \
+       __CEPH_BASE_PACKAGES__

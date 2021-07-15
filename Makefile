@@ -48,6 +48,7 @@ include maint-lib/makelib.mk
 
 # All flavor options that can be passed to FLAVORS
 ALL_BUILDABLE_FLAVORS := \
+  nautilus,softiron,10 \
 	nautilus,centos,7 \
 	nautilus,centos,8 \
 	octopus,centos,7 \
